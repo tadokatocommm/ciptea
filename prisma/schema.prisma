@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  // url é usada pelo Prisma Client dentro do seu app Next.js no container
+  url       = env("DATABASE_URL")
+  // directUrl é usada por comandos CLI do Prisma executados na sua máquina
+  directUrl = env("DIRECT_URL")
+}
+
+// Comece a modelar seus dados aqui. Exemplo:
+// model User {
+//   id        Int      @id @default(autoincrement())
+//   email     String   @unique
+//   name      String?
+//   createdAt DateTime @default(now())
+// }
